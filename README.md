@@ -1,3 +1,3 @@
 # Ros-project
 
-rosrun autlab2 cam_bringup.launch
+roslaunch autlab2 cam_bringup.launch
