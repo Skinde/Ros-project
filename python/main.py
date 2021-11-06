@@ -12,8 +12,8 @@ from tensorflow.keras.models import Sequential, Model
 folder = 'images/'
 
 #Para que todas las imagenes tengan el mismo tamaño
-IMG_WIDTH = 2736
-IMG_HEIGHT = 3648
+IMG_WIDTH = 300
+IMG_HEIGHT = 300
 
 def create_dataset(folder):
 
@@ -67,7 +67,7 @@ model=tf.keras.Sequential(
 model.compile(optimizer='rmsprop', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
   
 #Prueba a encajar el modelo
-history = model.fit(x=np.array(img_data, np.float32), y=np.array(list(map(int,target_val)), np.float32), epochs=5)
+history = model.fit(x=np.array(img_data, np.float32), y=np.array(list(map(int,target_val)), np.float32), epochs=50)
 
 print(history)
 
