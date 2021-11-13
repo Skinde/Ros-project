@@ -43,7 +43,18 @@ def create_dataset(folder):
 
       image_array.append(image)
       label_array.append(label)
-
+  
+  #Random shuffle
+  for r in range(len(image_array)):
+    n = random.randint(0,1)
+    if n:
+      copy1 = image_array[r]
+      copy2 = label_array[r]
+      pos = random.randint(0, len(image_array) -1)
+      image_array[r] = image_array[pos]
+      label_array[r] = label_array[pos]
+      image_array[pos] = copy1
+      label_array[pos] = copy2
   return image_array, label_array
 
 img_data, label_data = create_dataset(folder)
